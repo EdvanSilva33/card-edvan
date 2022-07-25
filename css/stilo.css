@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@500;600&family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@500;600&family=Big+Shoulders+Display:wght@700&display=swap');
+:root{
+    --paragrafo:hsla(0, 0%, 100%, 0.75);
+    --titulo:hsl(0, 0%, 95%);
+    --luxury:hsl(179, 100%, 13%);
+    --suvs:hsl(184, 100%, 22%);
+    --sedans:hsl(31, 77%, 52%);
+    --rosa:rgb(145, 112, 129);
+    --vermelho:rgb(106, 14, 71);
+    --preto:rgb(32, 14, 56);
+    
+
+}/* paletas de cores*/
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+.main{
+    width: 100%;
+    max-width:1050px;
+    margin: 2% auto;
+    display: flex;
+    padding: 100px;   
+}/*container de todos os cards*/
+
+.sedans{
+    border-radius: 15px 0 0 15px;
+    background-color: var(--sedans);
+
+}
+.corm{
+    border-radius: 15px 0 0 15px;
+    background-color: var(--rosa);
+}
+.corn{
+    border-radius: 0 15px 15px 0;
+    background-color: var(--vermelho);
+}
+.suvs{
+    background-color: var(--suvs);
+}
+.suvsnovo{
+    background-color: var(--preto);
+}
+.luxury{
+    border-radius: 0 15px 15px 0;
+    background-color: var(--luxury);
+}
+/*cads devidamente separados com suas específicos nomes reais*/
+
+.sedans, .suvs, .luxury, h1{
+
+    color:var(--titulo);
+    font-family: 'Big Shoulders Display';
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.sedans, .suvs, .luxury, .corm, .corn, .suvsnovo{
+
+    height: 450px;
+    padding: 40px;
+    color:var(--paragrafo);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    text-transform: none;
+    font-weight: 400;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.extra{
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    
+    border-radius: 50px;
+    display: flex;
+    background-color:rgba(7, 7, 7, 0.253);
+    position: relative;
+    justify-content: center;
+   
+}
+/*botão de cor dos cards*/
+
+.checkbox{
+    width: 100px;
+    height: 22px;
+    position: relative;
+    opacity: 0;
+}
+.ball{
+    cursor:auto;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    top:2px;
+    left: 1px;
+    background-color: #fff;
+    position: absolute;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+
+}
+.checkbox:checked + .ball{
+    transform: translateX(25px);
+}
+/* fim dos botões de cor dos cards */
+
+.btn{
+    cursor: pointer;
+    margin-top: 80px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    border: 0;
+    color:var( --luxury);
+    background-color: #fff;
+   
+}
+.btnsv{
+    color:var(--suvs);
+}
+
+.btns{
+    color: var(--sedans);
+
+}
+.btn:hover{
+    color:#fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 15px px;
+    
+}
+/*parte responsiva dos cards*/
+
+@media screen and (max-width:990px) {
+    .btn{
+       
+        margin-top: 50px;
+      
+       
+    }
+}
+@media screen and (max-width: 900px) {
+    .main{
+        width: 100%;
+        padding: 0 15px ;
+        max-width:315px;
+        
+        display: block;
+        padding: 10px;
+        
+    }
+    .sedans{
+        margin-bottom: 0;
+        border-radius: 15px 15px 0px 0px;
+
+    
+    }
+    .luxury{
+        margin-top: -20px;
+        border-radius: 0px 0px 15px 15px;
+
+    
+    }
+    .btn{
+      
+        margin-top: 80px;
+       
+    }
+    .corm{
+        border-radius: 15px 15px 0 0px;
+        
+    }
+    .corn{
+        border-radius: 0 0px 15px 15px;
+        margin-top: -20px;
+    }
+}
